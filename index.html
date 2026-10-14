@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101426">
+  <meta name="description" content="PandaLearn — a free learning hub for coding and computer skills.">
+  <title>PandaLearn — Learn something new</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" onclick="goHome();return false"><span class="brand-mark">P</span><span>Panda<span class="brand-accent">Learn</span><small>BY BRIJESH</small></span></a>
+  <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+  <nav id="navLinks"><a href="#home" onclick="goHome()">Home</a><a href="#courses" onclick="goCourses()">Courses</a><a href="#resources" onclick="showResources()">Free resources</a></nav>
+  <div class="nav-actions"><button class="btn btn-ghost" id="loginBtn" onclick="openAuth('login')">Log in</button><button class="btn btn-primary" id="signupBtn" onclick="openAuth('register')">Get started <span>↗</span></button><button class="avatar hidden" id="profileBtn" onclick="showDashboard()">B</button></div>
+</header>
+<main id="app">
+  <section class="hero" id="home">
+    <div class="hero-glow"></div><div class="hero-copy">
+      <div class="eyebrow"><span class="pulse"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+      <h1>Learn skills.<br><span>Build your future.</span></h1>
+      <p class="hero-text">Practical lessons, trusted free resources, and a learning path that moves at your pace.</p>
+      <div class="hero-actions"><button class="btn btn-primary btn-large" onclick="goCourses()">Explore courses <span>→</span></button><button class="btn btn-outline btn-large" onclick="showResources()">Browse free resources</button></div>
+      <div class="hero-proof"><div class="proof-avatars"><i>B</i><i>JS</i><i>Py</i></div><span><b>Learn at your pace</b><br><small>Free resources to get you started</small></span></div>
+    </div>
+    <div class="hero-art" aria-label="Learning illustration"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="learning-card card-float"><div class="code-window"><div class="window-dots"><i></i><i></i><i></i></div><p><span class="code-purple">const</span> future = <span class="code-green">"yours"</span>;</p><p><span class="code-blue">learn</span>(future);</p><div class="code-cursor"></div></div><div class="art-bottom"><span class="mini-icon">✦</span><div><b>Keep growing</b><small>One lesson at a time</small></div><span class="check">✓</span></div></div><div class="floating-tag tag-top">✦ Learn by doing</div><div class="floating-tag tag-bottom"><span>↗</span> Your journey, your pace</div></div>
+  </section>
+  <section class="stats-strip"><div><b>100%</b><span>Free to get started</span></div><div><b>Learn anywhere</b><span>Phone-friendly lessons</span></div><div><b>Practical</b><span>Learn by building</span></div><div><b>Open resources</b><span>Trusted learning links</span></div></section>
+  <section class="section" id="courses"><div class="section-head"><div><div class="eyebrow">YOUR LEARNING PATH</div><h2>Explore popular courses</h2><p>Pick a skill and start learning today.</p></div><button class="text-link" onclick="goCourses()">View all courses <span>→</span></button></div>
+    <div class="search-row"><label class="searchbox"><span>⌕</span><input id="courseSearch" placeholder="Search courses, skills..." autocomplete="off"><kbd>↵</kbd></label><div class="filters" id="categoryFilters"><button class="filter active" data-category="All">All</button><button class="filter" data-category="Web Development">Web Development</button><button class="filter" data-category="Programming">Programming</button><button class="filter" data-category="Computer Basics">Computer Basics</button></div></div>
+    <div class="course-grid" id="courseGrid"><div class="loading">Loading learning paths…</div></div>
+  </section>
+  <section class="wide-cta"><div><div class="eyebrow">START SMALL. GO FAR.</div><h2>Your future self will thank you.</h2><p>Build a steady learning habit with free, beginner-friendly resources.</p><button class="btn btn-light" onclick="goCourses()">Find your first course <span>→</span></button></div><div class="cta-symbol">✳</div></section>
+  <section class="section resources-section" id="resources"><div class="section-head"><div><div class="eyebrow">OPEN KNOWLEDGE</div><h2>Free learning resources</h2><p>Trusted public resources from established learning sites.</p></div></div><div class="resource-grid">
+    <a class="resource-card" href="https://developer.mozilla.org/en-US/docs/Learn" target="_blank" rel="noopener"><span class="resource-icon purple">⌘</span><div><b>MDN Web Docs</b><p>Web development guides and references.</p><span class="resource-link">Open resource ↗</span></div></a>
+    <a class="resource-card" href="https://www.freecodecamp.org/learn/" target="_blank" rel="noopener"><span class="resource-icon green">⌁</span><div><b>freeCodeCamp</b><p>Free coding curriculum and projects.</p><span class="resource-link">Open resource ↗</span></div></a>
+    <a class="resource-card" href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener"><span class="resource-icon yellow">Py</span><div><b>Python Tutorial</b><p>The official Python tutorial.</p><span class="resource-link">Open resource ↗</span></div></a>
+    <a class="resource-card" href="https://www.khanacademy.org/computing" target="_blank" rel="noopener"><span class="resource-icon blue">K</span><div><b>Khan Academy</b><p>Computing and programming lessons.</p><span class="resource-link">Open resource ↗</span></div></a>
+  </div><p class="small-note">External resources belong to their respective owners. Availability and terms may change.</p></section>
+</main>
+<footer class="footer"><a class="brand" href="#"><span class="brand-mark">P</span><span>Panda<span class="brand-accent">Learn</span><small>BY BRIJESH</small></span></a><span>Learn freely. Grow steadily.</span><span>© <span id="year"></span> PandaLearn</span></footer>
+
+<div class="modal-backdrop hidden" id="modalBackdrop" onclick="if(event.target===this)closeModal()"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" onclick="closeModal()" aria-label="Close">×</button><div id="modalContent"></div></section></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="/app.js"></script>
+</body>
+</html>
